@@ -1,0 +1,31 @@
+{
+  "name": "bemmit",
+  "version": "0.0.1",
+  "description": "A simple, opinionated BEM-style classname generator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jlengstorf/bemmit.git"
+  },
+  "keywords": [
+    "bem",
+    "css",
+    "generator",
+    "naming",
+    "class",
+    "names",
+    "utility"
+  ],
+  "author": "Jason Lengstorf <jason@lengstorf.com> (@jlengstorf)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlengstorf/bemmit/issues"
+  },
+  "homepage": "https://github.com/jlengstorf/bemmit#readme",
+  "devDependencies": {
+    "tape": "^4.6.2"
+  }
+}
