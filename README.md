@@ -1,5 +1,7 @@
 # bemmit
 
+[![Build Status](https://travis-ci.org/jlengstorf/bemmit.svg?branch=master)](https://travis-ci.org/jlengstorf/bemmit) [![Code Climate](https://codeclimate.com/github/jlengstorf/bemmit/badges/gpa.svg)](https://codeclimate.com/github/jlengstorf/bemmit) [![Test Coverage](https://codeclimate.com/github/jlengstorf/bemmit/badges/coverage.svg)](https://codeclimate.com/github/jlengstorf/bemmit/coverage)
+
 A small utility for quickly generating [BEM-style naming for CSS classes](http://getbem.com/naming/).
 
 ## Installation
