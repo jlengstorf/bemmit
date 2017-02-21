@@ -20,6 +20,9 @@
     "names",
     "utility"
   ],
+  "engines": {
+    "node": ">5"
+  },
   "author": "Jason Lengstorf <jason@lengstorf.com> (@jlengstorf)",
   "license": "ISC",
   "bugs": {
