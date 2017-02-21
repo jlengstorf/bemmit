@@ -7,7 +7,7 @@ engines:
     enabled: true
 ratings:
   paths:
-  - index.*
+  - src/**/*
 exclude_paths:
 - coverage/**/*
 - node_modules/**/*
