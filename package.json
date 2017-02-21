@@ -4,7 +4,8 @@
   "description": "A simple, opinionated BEM-style classname generator.",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,6 @@
   },
   "homepage": "https://github.com/jlengstorf/bemmit#readme",
   "devDependencies": {
-    "tape": "^4.6.2"
+    "jest": "^19.0.0"
   }
 }
