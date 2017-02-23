@@ -12,6 +12,10 @@ describe('Creates BEM-compliant block names', () => {
   test('generates a block-level class names with multiple modifiers', () => {
     expect(bemmit('foo')(null, ['bar', 'bat'])).toEqual('foo foo--bar foo--bat');
   });
+
+  test('ignores empty modifier strings', () => {
+    expect(bemmit('foo')(null, ['', null, 'bar'])).toEqual('foo foo--bar');
+  });
 });
 
 describe('Creates BEM-compliant element names', () => {
