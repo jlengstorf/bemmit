@@ -1,17 +1,19 @@
 {
   "name": "bemmit",
-  "version": "1.0.2",
+  "version": "0.0.0-development",
   "description": "A simple, opinionated BEM-style classname generator.",
   "main": "src/index.js",
   "scripts": {
     "test": "npm run test:lint --silent && npm run test:jest --silent",
-    "test:jest": "jest",
+    "test:jest": "jest --coverage",
     "test:lint": "eslint src/",
-    "test:coverage": "jest --coverage"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "npm test && git-cz",
+    "commitmsg": "validate-commit-msg"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jlengstorf/bemmit.git"
+    "url": "https://github.com/jlengstorf/bemmit.git"
   },
   "keywords": [
     "bem",
@@ -32,9 +34,29 @@
   },
   "homepage": "https://github.com/jlengstorf/bemmit#readme",
   "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "eslint": "^3.16.0",
     "eslint-config-airbnb-base": "^11.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "jest": "^19.0.0"
+    "husky": "^0.13.1",
+    "jest": "^19.0.0",
+    "semantic-release": "^6.3.2",
+    "validate-commit-msg": "^2.11.1"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
