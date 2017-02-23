@@ -9,7 +9,7 @@ function addModifier(baseClass, modifier) {
 function getClassArray(block, element, modifiers = []) {
   const baseClass = getBaseClass(block, element);
   const modifierFn = addModifier.bind(null, baseClass);
-  return [baseClass].concat(modifiers.map(modifierFn));
+  return [baseClass].concat(modifiers.map(modifierFn)).filter(c => c);
 }
 
 function getClassesAsString(block, element, modifiers) {
