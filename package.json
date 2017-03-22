@@ -2,12 +2,16 @@
   "name": "bemmit",
   "version": "0.0.0-development",
   "description": "A simple, opinionated BEM-style classname generator.",
-  "main": "src/index.js",
+  "main": "dist/bemmit.umd.js",
+  "module": "dist/bemmit.es2015.js",
+  "files": ["dist/"],
   "scripts": {
     "test": "npm run test:lint --silent && npm run test:jest --silent",
     "test:jest": "jest --coverage",
     "test:lint": "eslint src/",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "build:umd": "rollup -c rollup.config.node.js",
+    "build:es2015": "rollup -c",
+    "semantic-release": "semantic-release pre && npm run build:umd && npm run build:es2015 && npm publish && semantic-release post",
     "commit": "npm test && git-cz",
     "commitmsg": "validate-commit-msg"
   },
@@ -34,6 +38,8 @@
   },
   "homepage": "https://github.com/jlengstorf/bemmit#readme",
   "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "^3.16.0",
@@ -41,6 +47,8 @@
     "eslint-plugin-import": "^2.2.0",
     "husky": "^0.13.1",
     "jest": "^19.0.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
     "semantic-release": "^6.3.2",
     "validate-commit-msg": "^2.11.1"
   },
