@@ -14,6 +14,55 @@ npm install --save bemmit
 ## Usage
 
 ``` js
+// Load bemmit
+var bemmit = require('bemmit');
+
+// Create a block called 'photo'.
+var getClass = bemmit('photo');
+
+// Get the block classname.
+getClass(); // -> photo
+
+// Get the block classname with the modifiers 'active' and 'round'.
+getClass(null, ['active', 'round']); // -> photo photo--active photo--round
+
+// Get an element class for the caption
+getClass('caption'); // -> photo__caption
+
+// Get an element class for the share button with the modifier 'pinterest'.
+getClass('share', ['pinterest']); // -> photo__share photo__share--pinterest
+```
+
+## API
+
+### `bemmit(blockName)`
+
+Generates a function that will return BEM-style CSS classnames.
+
+#### Parameters
+
+- `blockName` — the name of the block. This is used as the base of the class name.
+
+#### Return Value
+
+- Function — a function that will generate CSS class names, with optional `element` and `modifiers` parameters.
+
+### `bemmit(blockName)([element][, [modifiers]])`
+
+Generates BEM-style CSS classname(s).
+
+#### Parameters
+
+- `element` (optional) — the element name
+- `modifiers` (optional) — an array of modifiers for the class
+
+#### Return Value
+
+- String — the class or classes
+
+#### Examples of Usage in Markup
+
+``` js
 var bemmit = require('bemmit');
 
 // Create an instance of bemmit.
@@ -55,53 +104,4 @@ This generates the following markup:
         </li>
     </ul>
 </div>
-```
-
-## API
-
-### `bemmit(blockName)`
-
-Generates a function that will return BEM-style CSS classnames.
-
-#### Parameters
-
-- `blockName` — the name of the block. This is used as the base of the class name.
-
-#### Return Value
-
-- Function — a function that will generate CSS class names, with optional `element` and `modifiers` parameters.
-
-### `bemmit(blockName)([element][, [modifiers]])`
-
-Generates BEM-style CSS classname(s).
-
-#### Parameters
-
-- `element` (optional) — the element name
-- `modifiers` (optional) — an array of modifiers for the class
-
-#### Return Value
-
-- String — the class or classes
-
-#### Examples of Usage
-
-``` js
-// Load bemmit
-var bemmit = require('bemmit');
-
-// Create a block called 'photo'.
-var getClass = bemmit('photo');
-
-// Get the block classname.
-getClass(); // -> photo
-
-// Get the block classname with the modifiers 'active' and 'round'.
-getClass(null, ['active', 'round']); // -> photo photo--active photo--round
-
-// Get an element class for the caption
-getClass('caption'); // -> photo__caption
-
-// Get an element class for the share button with the modifier 'pinterest'.
-getClass('share', ['pinterest']); // -> photo__share photo__share--pinterest
 ```
